@@ -12,7 +12,7 @@ using namespace std;
 
 // ADHEMAR MOLON NETO - 14687681
 // Luiz Fellipe Catuzzi - 11871198
-// SEU NOME - SEU NÚMERO USP
+// GUILHERME ANTONIO COSTA BANDEIRA - 14575620
 // SEU NOME - SEU NÚMERO USP
 
 // O código cria um jogo simples de labirinto onde o nosso pequeno arroba aventureiro deve coletar todos os (*) sem tocar nas paredes (#).
