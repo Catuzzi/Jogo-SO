@@ -1,3 +1,4 @@
+#include <sys/ioctl.h>
 #include <iostream>
 #include <vector>
 #include <termios.h> 
@@ -133,16 +134,42 @@ void mostrarHistorinha() {
 
 // função que imprime o labirinto
 void printLabirinto(const vector<vector<char>> &labirinto, int contador, int totalItens, int passos) {
-    system("clear"); // fica limpando o terminal ( talvez não funcione no windows )
+    system("clear"); // Limpa o terminal
+
+    // Obtém o tamanho do terminal
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    int larguraTerminal = w.ws_col;
+    int alturaTerminal = w.ws_row;
+
+    // Calcula dimensões do labirinto
+    int alturaLabirinto = labirinto.size();
+    int larguraLabirinto = labirinto[0].size() * 2; // Inclui espaços entre os caracteres
+
+    // Calcula margens para centralizar
+    int margemEsquerda = max(0, (larguraTerminal - larguraLabirinto) / 2);
+    int margemSuperior = max(0, (alturaTerminal - alturaLabirinto - 2) / 2); // Subtrai 2 linhas para a informação abaixo
+
+    // Adiciona linhas vazias antes para centralizar verticalmente
+    for (int i = 0; i < margemSuperior; i++) {
+        cout << endl;
+    }
+
+    // Imprime o labirinto centralizado horizontalmente
     for (const auto &linha : labirinto) {
+        cout << string(margemEsquerda, ' '); // Adiciona margem à esquerda
         for (char c : linha) {
-            cout << c << ' ';
+            cout << c << ' '; // Espaçamento entre os caracteres
         }
         cout << endl;
     }
-    cout << "\nItens coletados: " << contador << " de " << totalItens;
-    cout << " | Passos: " << passos << endl;
+
+    // Imprime informações centralizadas
+    string info = "Itens coletados: " + to_string(contador) + " de " + to_string(totalItens) + " | Passos: " + to_string(passos);
+    int margemInfo = max(0, (larguraTerminal - (int)info.length()) / 2);
+    cout << "\n" << string(margemInfo, ' ') << info << endl;
 }
+
 
 //************************************************************************************************************************/
 
