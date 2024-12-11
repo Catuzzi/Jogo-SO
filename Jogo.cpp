@@ -18,7 +18,7 @@ std::mutex outputMutex;            // Mutex para sincronizar saída no terminal
 // ADHEMAR MOLON NETO - 14687681
 // LUIZ FELLIPE CATUZZI -11871198   
 // GUILHERME ANTONIO COSTA BANDEIRA - 14575620
-// SEU NOME - SEU NÚMERO USP
+// LUCCA TOMMASO MONZANI - 5342324
 
 
 
