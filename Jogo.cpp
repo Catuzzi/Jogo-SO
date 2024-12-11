@@ -125,6 +125,7 @@ void mostrarHistorinha() {
     cout << "Bem-vindo ao desafio do labirinto!\n\n";
     cout << "Você é um pequeno arroba aventureiro (@) que, em uma caminhada despretensiosa, se perdeu em um labirinto sombrio. As paredes são feitas de barras de ferro afiadas (#), e você deve evitar encostá-las.\n";
     cout << "Para escapar, você precisa coletar todos os tesouros (*) espalhados pelo labirinto. Mas cuidado! Tocar nas paredes resultará no seu fim.\n";
+    cout << "Você pode encerrar o jogo pressionando a tecla Q a qualquer momento.\n";
     cout << "Use as teclas W, A, S e D para se movimentar e boa sorte!\n\n";
     cout << "Pressione ENTER para começar sua jornada...";
     cin.ignore(); // espera o enter do arroba aventueiro
@@ -236,14 +237,14 @@ int main() {
      vector<vector<char>> nivel1 = {
         {'#', '#', '#', '#', '#'},
         {'#', '@', '*', ' ', '#'},
-        {'#', ' ', '#', ' ', '#'},
-        {'#', '*', ' ', '*', '#'},
+        {'#', ' ', ' ', ' ', '#'},
+        {'#', '*', '#', '*', '#'},
         {'#', '#', '#', '#', '#'}};
 
     vector<vector<char>> nivel2 = {
     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
     {'#', '@', ' ', '*', ' ', ' ', ' ', '*', ' ', '#'},
-    {'#', ' ', '#', ' ', ' ', ' ', '#', ' ', '#', '#'},
+    {'#', ' ', ' ', '#', ' ', ' ', '#', ' ', '#', '#'},
     {'#', ' ', '#', '*', ' ', ' ', ' ', ' ', ' ', '#'},
     {'#', ' ', '#', ' ', ' ', ' ', '#', '*', ' ', '#'},
     {'#', ' ', ' ', ' ', '#', '*', ' ', ' ', ' ', '#'},
@@ -255,7 +256,7 @@ int main() {
 vector<vector<char>> nivel3 = {
     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
     {'#', '@', ' ', '*', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' ', ' ', '#', ' ', '*', ' ', '*', '#'},
-    {'#', ' ', '#', ' ', '#', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', '#', ' ', ' ', ' ', '#'},
+    {'#', ' ', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', '#', ' ', ' ', ' ', '#'},
     {'#', ' ', '#', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', '#', '*', '#', ' ', '#', ' ', '#'},
     {'#', ' ', '#', '#', ' ', ' ', ' ', '#', ' ', ' ', '*', ' ', ' ', ' ', ' ', '#', ' ', ' ', '*', '#'},
     {'#', ' ', '*', ' ', '#', '*', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', '*', ' ', ' ', '#'},
